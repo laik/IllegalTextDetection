@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 @Project ：illegal_context_recognition
 @File ：ac.py
@@ -11,12 +12,13 @@ class AhocorasickNer:
     """
     AC自动机
     """
+
     def __init__(self):
         self.actree = ahocorasick.Automaton()
 
     def add_keywords_by_file(self, file):
         words = []
-        with open(file, 'r', encoding='utf-8') as f:
+        with open(file, "r", encoding="utf-8") as f:
             for line in f.readlines():
                 words.append(line.rstrip())
 

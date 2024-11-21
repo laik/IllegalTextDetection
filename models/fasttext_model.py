@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 @Project ：Insult_Recognition
 @File ：fasttext_model.py

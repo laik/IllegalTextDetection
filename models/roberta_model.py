@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 @Project ：illegal_context_recognition
 @File ：roberta_model.py
@@ -24,7 +25,9 @@ class RoBERTaClassifier(BertPreTrainedModel):
         self.classifier = nn.Linear(bert_config.hidden_size, bert_config.num_labels)
 
     def forward(self, input_ids, attention_mask, token_type_ids, labels=None):
-        outputs = self.roberta(input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids)
+        outputs = self.roberta(
+            input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids
+        )
         cls_output = outputs[1]
         # cls_output = self.fc(cls_output)
         cls_output = self.dropout(cls_output)
@@ -36,21 +39,3 @@ class RoBERTaClassifier(BertPreTrainedModel):
             return loss, logic
 
         return logic, None
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
